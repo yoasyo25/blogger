@@ -1,5 +1,8 @@
 
 <h1><%= @article.title %></h1>
+<% if @article.image.exists? %>
+  <p><%= image_tag @article.image.url %></p>
+<% end %>
 <h4><%= @article.body %></h4>
 
 <%= render partial: 'articles/comments', collection: @article.comments.reverse %>
