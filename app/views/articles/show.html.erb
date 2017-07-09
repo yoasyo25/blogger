@@ -15,5 +15,14 @@
 </div>
 
 <div class="">
+  <p>
+    Tags:
+    <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+    <% end %>
+  </p>
+</div>
+
+<div class="">
   <%= link_to "Back to Article List", articles_path %>
 </div>
